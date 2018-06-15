@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Order</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+
+
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Order</a></h1>
+		<form id="form_14096" class="appnitro" method="post" action="php/invoice_proccess.php" autocomplete="off">
+		<div class="form_description">
+			<h2>Order</h2>
+		</div>						
+		<div id="li_2" >
+		<label class="description" for="element_2">Name </label>
+		<span>
+			<input id="element_2_1" name="fname" class="element text" maxlength="255" size="14" value=""/>
+			<label>First</label>
+		</span>
+		<span>
+			<input id="element_2_2" name= "lname" class="element text" maxlength="255" size="14" value=""/>
+			<label>Last</label>
+		</span> 
+		</div>		<div id="li_3" >
+		<span>
+			<label class="description" for="element_3">Address </label>
+			<input id="element_3" name="address" class="element text " type="text" size="14" maxlength="255" value=""/> 
+		</span> 
+		
+		<span>
+			<label class="description" for="element_4">ZIP Code </label>
+			<input id="element_4" name="zip" class="element text " type="text" size="14" maxlength="255" value=""/> 
+		</span> 
+		<span>
+			<label class="description" for="element_2">Car Registration Number </label>
+			<input id="element_2" name="car_reg" class="element text" type="text" maxlength="255" size="23" value=""/> 
+		</span> 
+		</div>
+		<br />
+		<div id="products_div" class=""></div>
+		<br />
+		<input id="addProduct_btn" type="button" onclick="addProduct();" value="Add Product" />
+		<br />
+		<div id="products_calc_div"  ></div>
+		<br />
+			
+		<div class="buttons">
+			<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</div>
+			
+		</form>	
+	</div>
+	<img id="bottom" src="bottom.png" alt="">
+	</body>
+</html>

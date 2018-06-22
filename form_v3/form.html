@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Order</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all" />
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="view.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript" src="scripts/autoFirstName.js"></script>
+<script type="text/javascript" src="scripts/autoLastName.js"></script>
+<script type="text/javascript" src="scripts/autoCarReg.js"></script>
+<script type="text/javascript" src="scripts/autoPName.js"></script>
+<script type="text/javascript" src="scripts/selectCategory.js"></script>
+
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Order</a></h1>
+		<form id="form_14096" class="appnitro" method="post" action="php/invoice_proccess.php" autocomplete="off">
+		<div class="form_description">
+			<h2>Order</h2>
+		</div>
+		<div id="li_2" >
+			<label class="description" for="name">Name </label>
+			<span>
+				<div class="autocomplete" id="fname_auto" style="width:125px;">
+				<input id="name_f" name="fname" class="element text" maxlength="255" size="14" value=""/>
+				</div>
+				<label>First</label>
+			</span>
+			<span>
+			<label class="description" for="name"></label>
+			<div class="autocomplete"  id="lname_auto" style="width:125px;">
+				<input id="name_l" name="lname" class="element text" maxlength="255" size="14" value=""/>
+			</div>
+				<label>Last</label>
+			</span>
+		</div>
+		<div id="li_3" >
+		<span>
+			<label class="description" for="address">Address </label>
+			<input id="address" name="address" class="element text " type="text" size="14" maxlength="255" value=""/> 
+		</span> 
+		
+		<span>
+			<label class="description" for="zip">ZIP Code </label>
+			<input id="zip" name="zip" class="element text " type="text" size="14" maxlength="255" value=""/> 
+		</span> 
+		<span>
+			<label class="description" for="car_reg">Car Registration Number </label>
+			<div class="autocomplete" id="car_reg_auto" style="width:125px;">
+				<input id="car_reg" name="car_reg" class="element text" type="text" maxlength="255" size="23" value=""/>
+			</div>
+		</span>
+		<span>
+			<label class="description" for="fill_paid">Paid</label>
+			<input class="element checkbox large" name="paid" id="fill_paid" type="checkbox" maxlength="255" readonly="" value=""> 
+		</span>
+		</div>
+		<div class="section_break">
+			<br />
+		</div>
+		<div class="product_fill">
+			<span>
+				<label class="description" for="product_select">Category</label>
+				<select class=" select large" id="product_select"></select>
+			</span>
+			<span>
+				<label class="description" for="fill_pname">Product Name</label>
+				<div class="autocomplete" id="pname_auto">
+					<input id="fill_pname" class="element text" size="14" maxlength="255" value="">
+				</div>
+			</span>
+		</div>
+		<div class="product_fill">
+			<span>
+				<label class="description" for="fill_weight1">Weight Before </label>
+				<input  class="element text small fill_weights" id="fill_weight1" onkeyup="calcWeight(this)" type="text" maxlength="255" value=""> 
+			</span>
+			<span>
+				<label class="description" for="fill_weight2">Weight After </label>
+				<input class="element text small fill_weights" id="fill_weight2" onkeyup="calcWeight(this)" type="text" maxlength="255" value=""> 
+			</span>
+			<span>
+				<label class="description" for="fill_pweight">Product Weight </label>
+				<input class="element text small" id="fill_pweight" type="text" maxlength="255" readonly="" value=""> 
+			</span>
+		</div>
+		<br />
+		<input id="addProduct_btn" type="button" onclick="addProduct();" value="Add Product" />
+		<div class="section_break">
+			<br />
+		</div>
+		<div id="products_div" class="" style="display:none;">
+			<table id="products_table">
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Category</th>
+						<th>Weights</th>
+						<th>Product Weight</th>
+					</tr>
+				</thead>
+				<tbody id="table_body">
+				</tbody>
+			</table>
+		</div>
+		<br />
+			
+		<div class="buttons">
+			<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</div>
+			
+		</form>	
+	</div>
+	<img id="bottom" src="bottom.png" alt="">
+	</body>
+</html>
